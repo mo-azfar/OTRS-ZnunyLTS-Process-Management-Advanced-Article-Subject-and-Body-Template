@@ -23,4 +23,5 @@ Process Management Activity Dialog Article Configuration
 New Process Ticket
 [![3.png](https://i.postimg.cc/nhgyv5P8/3.png)](https://postimg.cc/TKjNxkxQ)
 
-Credit to root@znuny for the idea
+Credit to root@znuny for the idea  
+As javascript file is write directly to original files, please make a backup first.  
