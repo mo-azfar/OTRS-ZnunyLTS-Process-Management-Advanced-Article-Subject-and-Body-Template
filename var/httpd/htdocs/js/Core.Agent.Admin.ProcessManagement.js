@@ -1207,7 +1207,7 @@ Core.Agent.Admin.ProcessManagement = (function (TargetNS) {
                                  if (typeof FieldConfigElement.Config === 'undefined'){
                                      FieldConfigElement.Config = {};
                                  }
-                                 // ---
+								.// ---
 								 // OTRS-ZnunyLTS-Process-Management-Advanced-Article-Subject-and-Body-Template
 								 // ---
 								 FieldConfigElement.Config.TemplateBody = $('#TemplateBody').val();
