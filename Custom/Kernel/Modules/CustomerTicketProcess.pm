@@ -954,40 +954,40 @@ sub _GetParam {
 
         # get article fields
         if ( $CurrentField eq 'Article' ) {
-			
-			# ---
-			# OTRS-ZnunyLTS-Process-Management-Advanced-Article-Subject-and-Body-Template
-			# ---
-			
+            
+            # ---
+            # OTRS-ZnunyLTS-Process-Management-Advanced-Article-Subject-and-Body-Template
+            # ---
+
             #$GetParam{Subject} = $ParamObject->GetParam( Param => 'Subject' );
             #$GetParam{Body}    = $ParamObject->GetParam( Param => 'Body' );
-			
-			my $DV_Subject = $ActivityDialog->{Fields}{$CurrentField}{DescriptionShort};
-			if ( $DV_Subject && (!$ParamObject->GetParam( Param => 'Subject' )) )  #If we have default value for article(subject) and Actual value does not exist.
-			{
-				$GetParam{Subject} = $DV_Subject;
-			}
-			else #If Actual value exists.
-			{
-				$GetParam{Subject} = $ParamObject->GetParam( Param => 'Subject' );
-			}
-			
-			my $TemplateBodyID = $ActivityDialog->{Fields}{$CurrentField}{Config}{TemplateBody} || "";
-			if ( $TemplateBodyID && (!$ParamObject->GetParam( Param => 'Body' )) )  #If we have default value for article(subject) and Actual value does not exist.
-			{	
-				my $StandardTemplateObject = $Kernel::OM->Get('Kernel::System::StandardTemplate');
-				my %StandardTemplate = $StandardTemplateObject->StandardTemplateGet(
-					ID => $TemplateBodyID,
-				);
-				
-				$GetParam{Body} = $StandardTemplate{Template};	
-			}
-			else
-			{
-				$GetParam{Body} = $ParamObject->GetParam( Param => 'Body' );
-			}
-			# ---
-			
+            
+            my $DV_Subject = $ActivityDialog->{Fields}{$CurrentField}{DescriptionShort};
+            if ( $DV_Subject && (!$ParamObject->GetParam( Param => 'Subject' )) )  #If we have default value for article(subject) and Actual value does not exist.
+            {
+                $GetParam{Subject} = $DV_Subject;
+            }
+            else #If Actual value exists.
+            {
+                $GetParam{Subject} = $ParamObject->GetParam( Param => 'Subject' );
+            }
+
+            my $TemplateBodyID = $ActivityDialog->{Fields}{$CurrentField}{Config}{TemplateBody} || "";
+            if ( $TemplateBodyID && (!$ParamObject->GetParam( Param => 'Body' )) )  #If we have default value for article(subject) and Actual value does not exist.
+            {
+                my $StandardTemplateObject = $Kernel::OM->Get('Kernel::System::StandardTemplate');
+                my %StandardTemplate = $StandardTemplateObject->StandardTemplateGet(
+                    ID => $TemplateBodyID,
+                );
+                
+                $GetParam{Body} = $StandardTemplate{Template};	
+            }
+            else
+            {
+                $GetParam{Body} = $ParamObject->GetParam( Param => 'Body' );
+            }
+            # ---
+
             @{ $GetParam{InformUserID} } = $ParamObject->GetArray(
                 Param => 'InformUserID',
             );
