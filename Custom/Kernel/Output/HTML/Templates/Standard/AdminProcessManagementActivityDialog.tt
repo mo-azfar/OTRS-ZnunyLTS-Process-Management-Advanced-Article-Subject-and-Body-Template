@@ -209,7 +209,7 @@
                     <textarea name="DescLong" id="DescLong" class="W50pc"></textarea>
                 </div>
                 <div class="Clear"></div>
-				
+
                 <label for="DefaultValue">[% Translate("Default value") | html %]:</label>
                 <div class="Field">
                     <input type="text" name="DefaultValue" id="DefaultValue" value="" class="W50pc" />
@@ -217,13 +217,13 @@
                 <div class="Clear"></div>
 # ---
 # OTRS-ZnunyLTS-Process-Management-Advanced-Article-Subject-and-Body-Template
-# ---				
-				<label for="TemplateBody">[% Translate("Template for Body") | html %]:</label>
+# ---
+                <label for="TemplateBody">[% Translate("Template for Body") | html %]:</label>
                 <div class="Field" id="TemplateBodyContainer" class='Hidden'>
                     [% Data.TemplateBodySelection %]
                 </div>
                 <div class="Clear"></div>
-# ---				
+# ---
                 <label for="CommunicationChannel">[% Translate("Communication Channel") | html %]:</label>
                 <div class="Field" id="CommunicationChannelContainer" class='Hidden'>
                     [% Data.CommunicationChannelSelection %]
