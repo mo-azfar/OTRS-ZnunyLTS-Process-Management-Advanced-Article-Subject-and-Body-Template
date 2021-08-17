@@ -1,7 +1,7 @@
 # --
 # Copyright (C) 2001-2021 OTRS AG, https://otrs.com/
 # Copyright (C) 2021 Znuny GmbH, https://znuny.org/
-# Copyright (C) 2021 mo-azfar, https://github.com/mo-azfar/OTRS-Process-Management-Advanced-Article-Subject-and-Body-Template
+# Copyright (C) 2021 mo-azfar, https://github.com/mo-azfar/OTRS-ZnunyLTS-Process-Management-Advanced-Article-Subject-and-Body-Template
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (GPL). If you
@@ -880,7 +880,10 @@ sub _ShowEdit {
         Class       => 'Modernize',
     );
 
-	#start - allow selection of template type 'Note' for article body
+	# ---
+	# OTRS-ZnunyLTS-Process-Management-Advanced-Article-Subject-and-Body-Template
+	# ---
+	
 	my $StandardTemplateObject = $Kernel::OM->Get('Kernel::System::StandardTemplate');
     my %StandardTemplates = $StandardTemplateObject->StandardTemplateList();
 
@@ -906,7 +909,7 @@ sub _ShowEdit {
         Translation   => 1,
         Class         => 'Modernize',
     );
-	#end - allow selection of template type 'Note' for article body
+	# ---
 
     my @ChannelList = $Kernel::OM->Get('Kernel::System::CommunicationChannel')->ChannelList();
 

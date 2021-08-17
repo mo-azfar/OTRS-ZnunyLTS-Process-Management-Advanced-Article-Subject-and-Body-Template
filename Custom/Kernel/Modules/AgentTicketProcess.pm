@@ -1,7 +1,7 @@
 # --
 # Copyright (C) 2001-2021 OTRS AG, https://otrs.com/
 # Copyright (C) 2021 Znuny GmbH, https://znuny.org/
-# Copyright (C) 2021 mo-azfar, https://github.com/mo-azfar/OTRS-Process-Management-Advanced-Article-Subject-and-Body-Template
+# Copyright (C) 2021 mo-azfar, https://github.com/mo-azfar/OTRS-ZnunyLTS-Process-Management-Advanced-Article-Subject-and-Body-Template
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (GPL). If you
@@ -1085,7 +1085,11 @@ sub _GetParam {
 
         # get article fields
         if ( $CurrentField eq 'Article' ) {
-
+			
+			# ---
+			# OTRS-ZnunyLTS-Process-Management-Advanced-Article-Subject-and-Body-Template
+			# ---
+			
             #$GetParam{Subject} = $ParamObject->GetParam( Param => 'Subject' );
             #$GetParam{Body}    = $ParamObject->GetParam( Param => 'Body' );
 			
@@ -1113,6 +1117,7 @@ sub _GetParam {
 			{
 				$GetParam{Body} = $ParamObject->GetParam( Param => 'Body' );
 			}
+			# ---
 			
             @{ $GetParam{InformUserID} } = $ParamObject->GetArray(
                 Param => 'InformUserID',

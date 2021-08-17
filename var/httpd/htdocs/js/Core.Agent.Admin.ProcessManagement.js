@@ -1,7 +1,7 @@
 // --
 // Copyright (C) 2001-2021 OTRS AG, https://otrs.com/
 // Copyright (C) 2021 Znuny GmbH, https://znuny.org/
-// Copyright (C) 2021 mo-azfar, https://github.com/mo-azfar/OTRS-Process-Management-Advanced-Article-Subject-and-Body-Template	
+// Copyright (C) 2021 mo-azfar, https://github.com/mo-azfar/OTRS-ZnunyLTS-Process-Management-Advanced-Article-Subject-and-Body-Template	
 // --
 // This software comes with ABSOLUTELY NO WARRANTY. For details, see
 // the enclosed file COPYING for license information (GPL). If you
@@ -1207,7 +1207,11 @@ Core.Agent.Admin.ProcessManagement = (function (TargetNS) {
                                  if (typeof FieldConfigElement.Config === 'undefined'){
                                      FieldConfigElement.Config = {};
                                  }
-                                 FieldConfigElement.Config.TemplateBody = $('#TemplateBody').val();
+                                 // ---
+								 // OTRS-ZnunyLTS-Process-Management-Advanced-Article-Subject-and-Body-Template
+								 // ---
+								 FieldConfigElement.Config.TemplateBody = $('#TemplateBody').val();
+								 // ---
 								 FieldConfigElement.Config.CommunicationChannel = $('#CommunicationChannel').val();
 
                                  FieldConfigElement.Config.IsVisibleForCustomer = '0';
@@ -1272,9 +1276,13 @@ Core.Agent.Admin.ProcessManagement = (function (TargetNS) {
                     if (typeof FieldConfig.Config === 'undefined'){
                         FieldConfig.Config = {};
                     }
+					// ---
+					// OTRS-ZnunyLTS-Process-Management-Advanced-Article-Subject-and-Body-Template
+					// ---
                     if (FieldConfig.Config.TemplateBody) {
                         $('#TemplateBody').val(FieldConfig.Config.TemplateBody);
                     }
+					// ---
 					if (FieldConfig.Config.CommunicationChannel) {
                         $('#CommunicationChannel').val(FieldConfig.Config.CommunicationChannel);
                     }
@@ -1299,9 +1307,13 @@ Core.Agent.Admin.ProcessManagement = (function (TargetNS) {
             // only article should show Communication channel select.
             if (Fieldname === 'Article') {
 				
+				// ---
+				// OTRS-ZnunyLTS-Process-Management-Advanced-Article-Subject-and-Body-Template
+				// ---
 				$('#TemplateBodyContainer').removeClass('Hidden');
                 $('#TemplateBodyContainer').prev('label').css('display', 'block');
                 $('#TemplateBodyContainer .Modernize').trigger('redraw.InputField');
+				// ---
 				
                 $('#CommunicationChannelContainer').removeClass('Hidden');
                 $('#CommunicationChannelContainer').prev('label').css('display', 'block');
@@ -1316,9 +1328,13 @@ Core.Agent.Admin.ProcessManagement = (function (TargetNS) {
             }
             else {
 
+				// ---
+				// OTRS-ZnunyLTS-Process-Management-Advanced-Article-Subject-and-Body-Template
+				// ---
                 $('#TemplateBodyContainer').addClass('Hidden');
                 $('#TemplateBodyContainer').prev('label').css('display', 'none');
-
+				// ---
+				
                 $('#CommunicationChannelContainer').addClass('Hidden');
                 $('#CommunicationChannelContainer').prev('label').css('display', 'none');
 				
