@@ -880,36 +880,36 @@ sub _ShowEdit {
         Class       => 'Modernize',
     );
 
-	# ---
-	# OTRS-ZnunyLTS-Process-Management-Advanced-Article-Subject-and-Body-Template
-	# ---
-	
-	my $StandardTemplateObject = $Kernel::OM->Get('Kernel::System::StandardTemplate');
+    # ---
+    # OTRS-ZnunyLTS-Process-Management-Advanced-Article-Subject-and-Body-Template
+    # ---
+
+    my $StandardTemplateObject = $Kernel::OM->Get('Kernel::System::StandardTemplate');
     my %StandardTemplates = $StandardTemplateObject->StandardTemplateList();
 
-	my %AvailableTemplates;
-	foreach my $StandardTemplateID ( keys %StandardTemplates )
-	{
-		my %StandardTemplate = $StandardTemplateObject->StandardTemplateGet(
-			ID => $StandardTemplateID,
-		);
-		
-		next if $StandardTemplate{TemplateType} ne "Note";
-		$AvailableTemplates{$StandardTemplate{ID}} = $StandardTemplate{Name};
-	}
-	
-	# create template article body selection
+    my %AvailableTemplates;
+    foreach my $StandardTemplateID ( keys %StandardTemplates )
+    {
+        my %StandardTemplate = $StandardTemplateObject->StandardTemplateGet(
+            ID => $StandardTemplateID,
+        );
+
+        next if $StandardTemplate{TemplateType} ne "Note";
+        $AvailableTemplates{$StandardTemplate{ID}} = $StandardTemplate{Name};
+    }
+
+    # create template article body selection
     $Param{TemplateBodySelection} = $LayoutObject->BuildSelection(
         Data          => \%AvailableTemplates,
         SelectedValue => '',
         Name          => 'TemplateBody',
         ID            => 'TemplateBody',
         Sort          => 'Alphanumeric',
-		PossibleNone  => 1,
+        PossibleNone  => 1,
         Translation   => 1,
         Class         => 'Modernize',
     );
-	# ---
+    # ---
 
     my @ChannelList = $Kernel::OM->Get('Kernel::System::CommunicationChannel')->ChannelList();
 
