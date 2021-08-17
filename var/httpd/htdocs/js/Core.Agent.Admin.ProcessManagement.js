@@ -1207,12 +1207,12 @@ Core.Agent.Admin.ProcessManagement = (function (TargetNS) {
                                  if (typeof FieldConfigElement.Config === 'undefined'){
                                      FieldConfigElement.Config = {};
                                  }
-								 // ---
-								 // OTRS-ZnunyLTS-Process-Management-Advanced-Article-Subject-and-Body-Template
-								 // ---
-								 FieldConfigElement.Config.TemplateBody = $('#TemplateBody').val();
-								 // ---
-								 FieldConfigElement.Config.CommunicationChannel = $('#CommunicationChannel').val();
+                                 // ---
+                                 // OTRS-ZnunyLTS-Process-Management-Advanced-Article-Subject-and-Body-Template
+                                 // ---
+                                 FieldConfigElement.Config.TemplateBody = $('#TemplateBody').val();
+                                 // ---
+                                 FieldConfigElement.Config.CommunicationChannel = $('#CommunicationChannel').val();
 
                                  FieldConfigElement.Config.IsVisibleForCustomer = '0';
                                  if ($('#IsVisibleForCustomer').prop('checked')) {
